@@ -1,0 +1,18 @@
+{
+  "name": "contempo",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.5.1",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-concat": "~2.1.7",
+    "gulp-clean-css": "~3.0.4",
+    "gulp-imagemin": "~0.1.4",
+    "gulp-notify": "~0.4.0",
+    "gulp-rename": "~0.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "~0.2.0",
+    "tiny-lr": "0.0.5"
+  }
+}

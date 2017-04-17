@@ -1,0 +1,216 @@
+.block { padding: 108px 0 108px; }
+
+.about {
+  background-color: $bg-color;
+  text-align: center;
+}
+
+.brands {
+  background-color: white;
+  padding-top: 0;
+}
+
+.contract { text-align: center; }
+
+// #Jumbotron Section
+
+.animate-pop-in {
+  animation: pop-in 2s cubic-bezier(.15,1,.35,1) forwards;
+  opacity: 0;
+  animation-delay: .15s;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(.95) translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.arrow {
+  bottom: 5%;
+  color: white;
+  left: 0;
+  opacity: .65;
+  left:0;
+  margin-left:auto;
+  margin-right:auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 28%, 50%, 75%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  80%{
+    transform: translateY(-4px);
+  }
+}
+
+.clients {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 120vh;
+  padding-top: 0;
+  z-index: -99;
+  section {
+    margin-bottom: 27px;
+  }
+  h2 {
+  @extend .col-md-6;
+  @extend .col-md-offset-3;
+  }
+}
+
+.clients {
+  .container {
+    width: 95vw;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+
+    -webkit-transform: translateY(-60%);
+            transform:translateY(-60%);
+
+    @include tablet {
+      width: 98vw;
+    }
+  }
+}
+
+.clients,
+.clients-page {
+  section { margin-bottom: 54px;
+    .block-hed {
+      @extend .col-md-8;
+      @extend .col-md-offset-2;
+    }
+    h2 {
+      @extend .col-md-6;
+      @extend .col-md-offset-3;
+    }
+  }
+}
+
+.clients--brand{
+  color: lighten($base-color, 40%);
+  font-weight: bold;
+  font-size: 27px;
+  height: 108px;
+  text-align: center;
+  img {
+    max-width: 200px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
+
+// #About Us Sectiom
+
+.about {
+  margin-top: 120vh;
+}
+
+.about--hed {
+  @extend .col-md-8;
+  @extend .col-md-offset-2;
+}
+
+ .about--hed,
+.about--copy,
+   .services { opacity: 0; }
+
+.about--copy {
+  @extend .row;
+
+  .about--wrapper {
+    @extend .col-md-8;
+    @extend .col-md-offset-2;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  .about--copy__item {
+    width: 30%;
+    @include mobile {
+      width: 60%;
+      margin: 27px auto;
+    }
+  }
+}
+
+.services {
+  margin-top: 81px;
+
+  .services--row {
+     @extend .col-sm-10;
+     @extend .col-sm-offset-1;
+  }
+  div {
+    &:first-child { margin-bottom: 27px; }
+  }
+  .btn {
+    margin-top: $space-md auto;
+  }
+}
+
+.service {
+  @extend .col-sm-3;
+
+  text-align: center;
+  img {
+    width: 60%;
+  }
+  h6 {
+    width: 100%;
+    margin-top: 27px;
+  }
+}
+
+.animate-scroll-pop {
+  animation: pop-in 1.25s cubic-bezier(.15,1,.35,1) forwards;
+  opacity: 0;
+  animation-delay: .15s;
+}
+
+.about--copy { animation-delay: .45s; }
+
+.services { animation-delay: .65s; }
+
+@keyframes scroll-pop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.95) translateY(5rem);
+    transform: scale(.95) translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

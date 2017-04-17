@@ -1,0 +1,52 @@
+.block {
+  &.cases {
+    padding: 0;
+  }
+}
+
+.cases--row__digital,
+.cases--row__event,
+.cases--row__print { background-color: white; }
+
+.cases--row__social,
+.cases--row__video { background-color: $bg-color;}
+
+.cases--row {
+  padding: 81px 0 81px 0;
+
+}
+
+.cases--intro {
+
+}
+
+.cases--row__col {
+  @extend .col-sm-6;
+  @extend .col-md-3;
+
+  &.card--case {
+    margin-top: 81px;
+  }
+
+  h2 {
+    margin-bottom: 27px;
+  }
+
+  &.video {
+    @extend .col-md-6;
+
+    background-color: $base-color;
+    height:  361px;
+    margin-top: 81px;
+    padding-left: 0;
+    padding-right: 0;
+    iframe {
+      width: 100%;
+      height: 361px;
+    }
+  }
+}
+
+.clients-page {
+  background-color: white;
+}

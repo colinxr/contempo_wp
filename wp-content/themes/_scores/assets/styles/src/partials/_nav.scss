@@ -1,0 +1,22 @@
+.navbar { margin-bottom: 0; }
+
+.navbar-default { 
+	background-color: white;
+	height: 128px;
+	}
+
+.navbar-brand__logo {
+	height: 54px; 
+	margin-top: 20px;
+}
+
+.navbar-nav li a {
+	line-height: 54px;
+	padding-top: 42px;
+}
+
+.navbar-nav { 
+	li { 
+		.dropdown-menu { margin-top: -5px; }
+	}
+}

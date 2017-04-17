@@ -1,0 +1,57 @@
+.contact--main {
+  background-color: white;
+
+  &.michael {
+    background-color: $bg-color;
+  }
+
+  .main-bio {
+    @extend .col-md-5;
+    @extend .col-md-offset-1;
+
+    h3 {
+      line-height: 40.5px;
+      margin: 0;
+    }
+    h4 { font-weight: 300; }
+
+    p { margin: 13.5px 0;}
+  }
+
+  .main-photo {
+    @extend .col-md-4;
+    @extend .col-md-offset-1;
+
+    margin-top: 27px;
+  }
+}
+
+.contact--row {
+  background-color: white;
+}
+
+.contact--row__col {
+  @extend .col-md-4;
+}
+
+.card-contact {
+  height: 400px;
+}
+
+.contact-staff {
+  background-color: $bg-color;
+}
+
+.contact--col {
+  @extend .col-sm-6;
+  @extend .col-md-4;
+
+  .contact-list li {
+    margin-bottom: 27px;
+  }
+
+  ul ul {
+    margin-bottom: 27px;
+  }
+
+}

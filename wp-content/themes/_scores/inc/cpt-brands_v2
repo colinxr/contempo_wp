@@ -1,0 +1,97 @@
+<?php
+function register_cpt_brand()
+{
+	 $labels = array(
+        'name' => _x( 'Brands', 'brand' ),
+        'singular_name' => _x( 'Brand', 'brand' ),
+        'add_new' => _x( 'Add New', 'Brand' ),
+        'add_new_item' => _x( 'Add New Brand', 'brand' ),
+        'brand_item' => _x( 'Brand Brand', 'brand' ),
+        'new_item' => _x( 'New Brand', 'brand' ),
+        'view_item' => _x( 'View Brand', 'brand' ),
+        'search_items' => _x( 'Search Brands', 'brand' ),
+        'not_found' => _x( 'No Brands found', 'brand' ),
+        'not_found_in_trash' => _x( 'No Brands found in Trash', 'brand' ),
+        'parent_item_colon' => _x( 'Parent Brand:', 'brand' ),
+        'menu_name' => _x( 'Brands', 'brand' )
+    );
+	$args = array(
+		'labels'        => $labels,
+		'description'   => 'brand',
+		'public'        => true,
+		'supports'      => array( 'title', 'thumbnail', 'editor' ),
+		'has_archive'   => false,
+		'rewrite' 		=> array( 'with_front' => false ),
+		'menu_icon' 	=> 'dashicons-tk',
+	);
+	register_post_type( 'brand', $args );
+}
+add_action( 'init', 'register_cpt_brand' );
+
+/* ---------------------------------
+	Metaboxes
+--------------------------------- */
+add_action( 'bmb2_init', 'contempo_brand_metaboxes' );
+
+function contempo_brand_metaboxes()
+
+/* ---------------------------------
+	Metaboxes
+--------------------------------- */
+add_action( 'bmb2_init', 'contempo_brand_metaboxes' );
+
+function contempo_brand_metaboxes()
+{
+    $prefix = '_brand_';
+
+
+     $bmb = new_bmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Brand Info', 'bmb2' ),
+		'object_types'  => array( 'brand'),
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true,
+	) );
+
+
+    $bmb->add_field( array(
+	    'name' => 'Homepage Dek',
+	    'id'   => $prefix . 'homepage_dek',
+	    'type' => 'textarea',
+	) );
+
+	$bmb->add_field( array(
+	    'name' => 'Print Media Kit Link',
+	    'id'   => $prefix . 'print_media_kit',
+	    'type' => 'text',
+	) );
+
+	$bmb->add_field( array(
+	    'name' => 'Digital Media Kit Link',
+	    'id'   => $prefix . 'digital_media_kit',
+	    'type' => 'text',
+	) );
+
+	$bmb->add_field( array(
+	    'name' => 'Special Media Kit Link',
+	    'id'   => $prefix . 'special_media_kit',
+	    'type' => 'text',
+	) );
+
+	$bmb->add_field( array(
+	    'name' => 'Sponsor',
+	    'id'   => $prefix . 'sponsor',
+	    'type' => 'text',
+	) );
+
+	$bmb->add_field( array(
+	    'name' => 'FB Follow',
+	    'id'   => $prefix . 'fb_follow',
+	    'type' => 'text',
+	) );
+
+}
+
+
+?>

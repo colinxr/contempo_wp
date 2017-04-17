@@ -1,0 +1,150 @@
+/***    Typography    ***/
+
+@font-face {
+	font-family: 'Calibre Bold';
+
+	src: url('../fonts/calibre/Calibre-Medium.eot');
+	src: local('Calibre-Medium');
+	src: url('../fonts/calibre/Calibre-Medium.woff') format('woff');
+	src: url('../fonts/calibre/Calibre-Medium.svg#Calibre-Medium') format('svg');
+}
+
+@font-face {
+	font-family: 'Mercury-Display';
+
+	src: url('../fonts/mercury-display/MercuryDisplay-Bold.eot');
+	src: local('MercuryDisplay-Bold');
+	src: url('../fonts/mercury-display/MercuryDisplay-Bold.ttf') format('truetype');
+	src: url('../fonts/mercury-display/MercuryDisplay-Bold.woff') format('woff');
+  src: url('../fonts/mercury-display/MercuryDisplay-Bold.svg#MercuryDisplay-Bold') format('woff');
+}
+
+$font-stack: 'Calibre Bold', helvetica, arial, sans-serif;
+
+$heading-stack: 'Mercury-Display', 'Georgia', Times, Serif;
+
+body {
+	color: $base-color;
+	line-height: 27px;
+	font-family: $font-stack;
+	font-size: 18px;
+	font-weight: 300;
+}
+strong { font-family: 'Calibre Bold', Helvetica, Arial, sans-serif;  }
+
+h1,
+h2 { font-family: $heading-stack; }
+
+h1 {
+	font-size: 76px;
+	font-weight: 500;
+	line-height: 81px;
+}
+
+h2 {
+	font-size: 47px;
+	font-weight: 500;
+	line-height: 54px;
+	margin: 27px 0 54px 0;
+}
+
+h3 {
+	font-size: 29px;
+	font-weight: 300;
+	line-height: 40.5px;
+	margin-bottom: 27px;
+}
+
+h4 {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 27px;
+}
+
+h5 {
+	color: $accent-color;
+	font-weight: 300;
+}
+
+h6 {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+p {
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 27px;
+	margin-top: $space;
+	&:first-of-type{
+		margin-top: 0;
+	}
+}
+
+.jumbotron h1,
+.jumbotron h3 {
+	color: white;
+	margin-bottom: 27px;
+}
+
+h2.block-hed,
+h3.block-hed {
+	margin-top: 0;
+	text-align: center
+}
+
+.card--info__content h2 { margin-bottom: 27px; }
+
+ .card--inline__info h3 {
+	 font-weight: 500;
+	 line-height: 40.5px;
+	 margin-bottom: 0;
+	}
+
+ .card--inline__info h4 { line-height: 27px; }
+
+  .card--inline__info p { margin: 13px 0; }
+
+.stats h3 { font-weight: 600; }
+.stats h4 { font-weight: 400; }
+
+a {
+	color: $accent-color;
+	&:hover {
+        color: darken($accent-color, 2%);
+    }
+}
+
+a.btn {
+	&:hover {
+        color: white;
+        text-decoration: none;
+    }
+    &:active {
+    	color: darken(white, 10%);
+    }
+    &:visited {
+    	text-decoration: none;
+    }
+}
+
+a.btn-secondary {
+	color: $base-color;
+	text-decoration: none;
+	line-height: 54px;
+	&:hover {
+        color: white;
+    }
+}
+
+a.btn-secondary__jumbo {
+	color: white;
+	text-decoration: none;
+	line-height: 54px;
+	&:hover {
+        color: $base-color;
+    }
+    &:active {
+        color: white;
+    }
+}

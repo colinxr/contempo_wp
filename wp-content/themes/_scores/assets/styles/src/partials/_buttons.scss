@@ -1,0 +1,58 @@
+/***    Buttons    ***/
+
+.btn {
+	background-color: white;
+	border-color: $base-color;
+	color: $base-color;
+	cursor: pointer;
+	display: inline-block;
+	height: $space-md;
+	line-height: $space-md;
+	margin-top: $space;
+	text-align: center;
+	transition: all .45s;
+	vertical-align: middle;
+	width: 300px;
+
+	@include border-radius(4px);
+
+	&:hover {
+        background-color: lighten($base-color, 5%);
+    }
+    &:active {
+        background-color: darken($base-color, 10%);
+    }
+
+}
+
+.btn-secondary {
+	border: 2px solid $base-color;
+
+	&:hover {
+        background-color: lighten($base-color, 5%);
+    }
+    &:active {
+        background-color: darken($base-color, 15%);
+    }
+}
+
+.btn-secondary__jumbo {
+	background-color: transparent;
+	border: 2px solid white;
+	color: white;
+	margin-right: 20px;
+
+	&:hover {
+        background-color: white;
+    }
+    &:active {
+        background-color: $base-color;
+        border-color: $base-color;
+    }
+}
+
+.carousel--btn {
+	@extend .btn-secondary__jumbo;
+	margin-right: 0;
+	margin-top: 0;
+}

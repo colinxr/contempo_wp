@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="387px" height="547px" viewBox="0 0 387 547" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Body</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="191.400202" cy="520.28399" rx="12.2077578" ry="12.2316975"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="24.4155156" height="24.463395" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Brand-Page" transform="translate(-317.000000, -1993.000000)">
+            <g id="Sharp-Info" transform="translate(0.000000, 606.000000)">
+                <g id="Social" transform="translate(218.000000, 1389.000000)">
+                    <g id="iPad" transform="translate(101.000000, 0.000000)">
+                        <g id="Body">
+                            <rect id="Rectangle-2" stroke="#CCD2D5" stroke-width="3" fill="#EAF0F2" x="0" y="0" width="382.800405" height="543" rx="19"></rect>
+                            <rect id="Rectangle-3" fill="#DEE3E6" x="23.1075415" y="47.1794047" width="336.585322" height="449.078037" rx="2"></rect>
+                            <use id="Oval-1" stroke="#CCD2D5" mask="url(#mask-2)" stroke-width="8" xlink:href="#path-1"></use>
+                            <g id="Group" transform="translate(187.912271, 20.094932)">
+                                <path d="M3.48793079,5.67900241 C2.28590264,5.67900241 1.30797405,4.69915607 1.30797405,3.49477072 C1.30797405,2.29038536 2.28590264,1.31053902 3.48793079,1.31053902 C4.68995894,1.31053902 5.66788754,2.29038536 5.66788754,3.49477072 C5.66788754,4.69915607 4.68995894,5.67900241 3.48793079,5.67900241" id="Fill-9" fill="#BAC1C4"></path>
+                                <path d="M3.48793079,0 C1.5645861,0 0,1.56765429 0,3.49477072 C0,5.42188714 1.5645861,6.98954143 3.48793079,6.98954143 C5.41127549,6.98954143 6.97586159,5.42188714 6.97586159,3.49477072 C6.97586159,1.56765429 5.41127549,0 3.48793079,0 M3.48793079,1.99701184 C4.31357384,1.99701184 4.98275828,2.66750856 4.98275828,3.49477072 C4.98275828,4.32203287 4.31357384,4.99252959 3.48793079,4.99252959 C2.66228775,4.99252959 1.99310331,4.32203287 1.99310331,3.49477072 C1.99310331,2.66750856 2.66228775,1.99701184 3.48793079,1.99701184" id="Fill-11" fill="#D0D8DB"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

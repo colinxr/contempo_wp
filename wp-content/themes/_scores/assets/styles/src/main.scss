@@ -1,0 +1,105 @@
+$accent-color: #D75C37;
+    $bg-color: #F5F5F5;
+  $base-color: #67727A;
+
+
+$space-big: 81px;
+ $space-md: 54px;
+    $space: 27px;
+
+
+$grid-columns:              12;
+$grid-gutter-width:         30px;
+$grid-float-breakpoint:     768px;
+
+
+ $mobile-width: 480px;
+ $tablet-width: 768px;
+   $sm-desktop: 992px;
+$desktop-width: 1200px;
+
+// Media Queries
+
+@mixin mobile {
+  @media screen and (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: #{$sm-desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Border-radius
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+
+body {
+	background-color: $bg-color;
+}
+
+
+@import "vendor/bootstrap/bootstrap";
+
+@import "partials/typography", "partials/card", "partials/buttons", "partials/nav", "partials/home", "partials/jumbotron",  "partials/case-studies", "partials/brands", "partials/contact", "partials/footer";
+
+section {
+  @include make-row();
+}
+
+/* resets bootstrap columns and rows to allow unevens cols to be centered */
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* inline-block space fix */
+    margin-right:-4px;
+    vertical-align: top;
+}
