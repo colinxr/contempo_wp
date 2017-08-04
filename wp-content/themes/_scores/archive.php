@@ -23,7 +23,7 @@ get_header(); ?>
 				<h1 class="page-title animate-pop-in"><?php echo esc_html($hed);?></h1>
 				<h3 class="archive-description animate-pop-in"><?php echo esc_html($dek);?></h3>
 			</header><!-- .page-header -->
-		<? endif;?>
+		<?php endif;?>
 	</div><!-- .container -->
 </div><!-- .page-head -->
 
