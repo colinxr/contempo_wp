@@ -221,3 +221,4 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		}
 	}
 } // End if().
+?>

@@ -32,36 +32,32 @@ get_header(); ?>
 		<div class="container">
 
 			<?php
+				$args = array(
+					'post_type' => 'case_study',
+					'post__not_in' 	=> array(98, 100) // Excludes Custom Publishing Titles from case study array.
+				);
 
-			$args = array(
-				'post_type' => 'case_study',
-				'post__not_in' 	=> array(98, 100) // Excludes Custom Publishing Titles from case study array.
-			);
+				$query = new WP_Query( $args );
 
-			$query = new WP_Query( $args );
+				if ( $query->have_posts() ) {
 
-			if ( $query->have_posts() ) {
+				/* Start the Loop */
+				while ( $query->have_posts() ) : $query->the_post();
 
-			/* Start the Loop */
-			while ( $query->have_posts() ) : $query->the_post();
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( '_partials/posts-row', get_post_format() );
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( '_partials/posts-row', get_post_format() );
-
-			endwhile;
-		} else {
-			get_template_part( 'template-parts/content', 'none' );
-		} ?>
+				endwhile;
+				} else {
+					get_template_part( 'template-parts/content', 'none' );
+				}
+			?>
 		</div> <!-- end of .container -->
 	</div> <!-- end of .cases__row--digital -->
 </div> <!-- end of .block .case -->
-
 <?php get_template_part('/_partials/word-carousel') ; ?>
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>
