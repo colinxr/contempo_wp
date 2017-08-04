@@ -1,0 +1,21 @@
+article { margin-bottom: 54px; }
+
+.entry-title {
+	margin-bottom: 27px;
+	a {
+		color: $base-color;
+		&:hover {
+	  	color: darken($base-color, 10%);
+			text-decoration: underline;
+	  }
+	}
+}
+
+.post {
+  margin: 108px auto 0;
+  max-width: 728px;
+}
+
+.hentry {
+  margin: 0 0 81px;
+}

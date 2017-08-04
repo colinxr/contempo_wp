@@ -1,0 +1,22 @@
+{
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/svg",
+    "test/css/animations",
+    "test/css/backgroundsizecover",
+    "test/css/boxshadow",
+    "test/css/boxsizing",
+    "test/css/calc",
+    "test/css/cssgrid",
+    "test/css/flexbox",
+    "test/css/flexboxlegacy",
+    "test/css/fontface",
+    "test/css/gradients",
+    "test/css/objectfit",
+    "test/css/opacity",
+    "test/css/vhunit"
+  ]
+}

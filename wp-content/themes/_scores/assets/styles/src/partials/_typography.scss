@@ -1,51 +1,64 @@
 /***    Typography    ***/
 
 @font-face {
-	font-family: 'Calibre Bold';
+	font-family: 'Calibre Regular';
 
-	src: url('../fonts/calibre/Calibre-Medium.eot');
-	src: local('Calibre-Medium');
-	src: url('../fonts/calibre/Calibre-Medium.woff') format('woff');
-	src: url('../fonts/calibre/Calibre-Medium.svg#Calibre-Medium') format('svg');
+	src: url(/fonts/calibre/Calibre-Regular.eot);
+	src: url(/fonts/calibre/Calibre-Regular.woff) format('woff'),
+	     url(/fonts/calibre/Calibre-Regular.svg#Calibre-Regular) format('svg');
+
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
 }
 
 @font-face {
-	font-family: 'Mercury-Display';
+	font-family: 'Mercury';
 
-	src: url('../fonts/mercury-display/MercuryDisplay-Bold.eot');
-	src: local('MercuryDisplay-Bold');
-	src: url('../fonts/mercury-display/MercuryDisplay-Bold.ttf') format('truetype');
-	src: url('../fonts/mercury-display/MercuryDisplay-Bold.woff') format('woff');
-  src: url('../fonts/mercury-display/MercuryDisplay-Bold.svg#MercuryDisplay-Bold') format('woff');
+	src: url('/fonts/mercury-display/MercuryDisplay-Bold.eot');
+	src: url('/fonts/mercury-display/MercuryDisplay-Bold.ttf') format('truetype'),
+			 url('/fonts/mercury-display/MercuryDisplay-Bold.woff') format('woff'), url('/fonts/mercury-display/MercuryDisplay-Bold.svg#MercuryDisplay-Bold') format('woff');
 }
 
-$font-stack: 'Calibre Bold', helvetica, arial, sans-serif;
-
-$heading-stack: 'Mercury-Display', 'Georgia', Times, Serif;
+$font-stack: 'Calibre Regular', Helvetica Neue, Helvetica, Arial, sans-serif;
+$heading-stack: /*'Mercury',*/ Georgia, Times New Roman, Times, Serif;
 
 body {
 	color: $base-color;
-	line-height: 27px;
 	font-family: $font-stack;
 	font-size: 18px;
 	font-weight: 300;
+	letter-spacing: .45px;
+	line-height: 27px;
+
 }
-strong { font-family: 'Calibre Bold', Helvetica, Arial, sans-serif;  }
+strong { font-family: $font-stack; }
 
 h1,
-h2 { font-family: $heading-stack; }
+h2 {
+	font-family: $heading-stack;
+	font-weight: 400;
+}
 
 h1 {
 	font-size: 76px;
-	font-weight: 500;
 	line-height: 81px;
+
+	@include desktop {
+		font-size: 47px;
+		line-height: 54px;
+	}
 }
 
 h2 {
 	font-size: 47px;
-	font-weight: 500;
 	line-height: 54px;
 	margin: 27px 0 54px 0;
+
+	@include tablet {
+		font-size: 29px;
+		line-height: 40.5px;
+	}
 }
 
 h3 {
@@ -57,17 +70,13 @@ h3 {
 
 h4 {
 	font-size: 18px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 27px;
+	margin: 0;
 }
 
 h5 {
 	color: $accent-color;
-	font-weight: 300;
-}
-
-h6 {
-	font-size: 18px;
 	font-weight: 300;
 }
 
@@ -87,64 +96,64 @@ p {
 	margin-bottom: 27px;
 }
 
-h2.block-hed,
-h3.block-hed {
-	margin-top: 0;
-	text-align: center
+.jumbotron h3 {
+	@include tablet {
+		font-size: 18px;
+		line-height: 27px;
+	}
 }
 
-.card--info__content h2 { margin-bottom: 27px; }
+h2.block-hed,
+h3.block-hed {
+	text-align: center;
+	margin: 0 auto $space-md auto;
+	width: 75%;
+}
 
- .card--inline__info h3 {
-	 font-weight: 500;
-	 line-height: 40.5px;
-	 margin-bottom: 0;
+.card-info__content h2 { margin-bottom: 27px; }
+
+.card-inline__info h3 {
+	font-weight: 600;
+	line-height: 32px;
+	margin-bottom: 8px;
+
+	@include sm-desktop {
+		font-size: 18px;
+		line-height: 27px;
 	}
 
- .card--inline__info h4 { line-height: 27px; }
+	a {
+		color: $base-color;
+		&:hover {
+	  	color: darken($base-color, 10%);
+			text-decoration: underline;
+	  }
+	}
+}
 
-  .card--inline__info p { margin: 13px 0; }
+.card-inline__info h4 {
+	color: lighten($base-color, 25%);
+	line-height: 27px;
 
-.stats h3 { font-weight: 600; }
-.stats h4 { font-weight: 400; }
+	@include sm-desktop {
+		letter-spacing: 0px;
+		line-height: 20px;
+	}
+}
+
+.card-inline__info p { margin: 13px 0; }
+
+.grid__brand-info {
+	h3 { margin-bottom: 0; }
+}
+
 
 a {
 	color: $accent-color;
-	&:hover {
-        color: darken($accent-color, 2%);
-    }
-}
-
-a.btn {
-	&:hover {
-        color: white;
-        text-decoration: none;
-    }
-    &:active {
-    	color: darken(white, 10%);
-    }
-    &:visited {
-    	text-decoration: none;
-    }
-}
-
-a.btn-secondary {
-	color: $base-color;
 	text-decoration: none;
-	line-height: 54px;
 	&:hover {
-        color: white;
-    }
+  	color: lighten($accent-color, 15%);
+  }
 }
 
-a.btn-secondary__jumbo {
-	color: white;
-	text-decoration: none;
-	line-height: 54px;
-	&:hover {
-        color: $base-color;
-    }
-    &:active {
-        color: white;
-    }
-}
+.post-meta { color: lighten($base-color, 25%); }

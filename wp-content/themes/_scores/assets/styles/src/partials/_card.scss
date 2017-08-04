@@ -1,168 +1,22 @@
-/***    Card    ***/
-
-.brands {
-	.container {
-		@include tablet {
-			display: flex;
-			display: -webkit-flex;
-			display: flex;
-			-webkit-justify-content: space-between;
-			justify-content: space-between;
-			-webkit-flex-wrap: wrap;
-			flex-wrap: wrap;
-		}
-	}
-}
-
-.card {
-	background-color: white;
-	border: 1px solid rgba( $base-color, .4 );
-	margin: 0 auto 81px auto;
-	padding-left: 0;
-	padding-right: 0;
-	width: 80%;
-	@include border-radius(4px);
-
-	display: -webkit-flex;
-	display: flex;
-
-	-webkit-flex-direction: row;
-			flex-direction: row;
-
-	//@media (min-width: 768px)
-	//img sits on top of head
-
-	@include tablet {
-		width: 46%;
-
-		-webkit-flex-direction: column-reverse;
-				flex-direction: column-reverse;
-
-	}
-
-	@include mobile {
-		width: 90%;
-		margin: 0 auto 81px;
-	}
-
-	//card mobile 500px breakpoint
-}
-
-.card--large {
-	height: 700px;
-	@include tablet {
-		height: auto;
-	}
-}
-
-.card--small{
-
-}
-
-.card--half {
-	width: 50%;
-
-	@include tablet {
-		width: 100%;
-	}
-}
-
-.card--large .card--info {
-	margin: $space-big $space-md 0;
-
-	@include tablet {
-		margin: 0;
-		padding: 0 $space $space;
-	}
-}
-
-
-.card--small .card--info {
-	margin: $space-md $space-md;
-	text-align: left;
-
-	@include tablet {
-		margin: 0;
-		padding: 0 $space $space;
-	}
-}
-
-.card--info__content {
-	width: 75%;
-	@include tablet {
-		height: auto;
-		width: 100%;
-	}
-
-	p {
-		margin-bottom: 27px;
-	}
-}
-.card--cta {
-	margin-top: 27px;
-}
-
-.card--img{
-	background-color: $base-color;
-
-	@include tablet {
-		height: 250px;
-	}
-}
-
-
-.card--img__audi {
-	background-img: url('') no-repeat center;
-	background-size: cover;
-
-	@include tablet {
-		background-img: url('') no-repeat center;
-	}
-}
-
-.card--img__volkswagen {
-	background-img: url('') no-repeat center;
-	background-size: cover;
-
-	@include tablet {
-		background-img: url('') no-repeat center;
-	}
-}
-
 // Case Studies Card
 
-/*.case-studies {
-	.row {
-		display: flex;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-justify-content: space-between;
-		justify-content: space-between;
-		-webkit-flex-wrap: wrap;
-		flex-wrap: wrap;
-	}
-}*/
+.card__case { margin-top: 27px; }
 
-.card--inline {
+.card__case--page { margin-top: 0; }
+
+.card-inline {
 	background-color: transparent;
 	border: 0;
 	margin-bottom: 0;
-
-	@include tablet {
-	}
 }
 
-.card--inline__info {
+.card-inline__info {
 	margin-top: 27px;
 	width: 100%;
 }
 
-.video {
-}
-
 .card__header {
-	background-color: $base-color;
-	height: 176px;
+	max-height: 246px;
 	overflow: hidden;
 
 	img {
@@ -170,8 +24,8 @@
 	}
 }
 
-.card--contact  {
+.card-contact  {
 	.card__header {
-		height: 240px;
+		max-height: 240px;
 	}
 }

@@ -1,13 +1,8 @@
 .block { padding: 108px 0 108px; }
 
-.about {
-  background-color: $bg-color;
-  text-align: center;
-}
-
 .brands {
   background-color: white;
-  padding-top: 0;
+  padding: 0;
 }
 
 .contract { text-align: center; }
@@ -43,6 +38,7 @@
   right: 0;
   text-align: center;
 }
+
 .bounce {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
@@ -64,133 +60,86 @@
   }
 }
 
-.clients {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 120vh;
-  padding-top: 0;
-  z-index: -99;
-  section {
-    margin-bottom: 27px;
-  }
-  h2 {
-  @extend .col-md-6;
-  @extend .col-md-offset-3;
-  }
-}
-
-.clients {
-  .container {
-    width: 95vw;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
-
-    -webkit-transform: translateY(-60%);
-            transform:translateY(-60%);
-
-    @include tablet {
-      width: 98vw;
-    }
-  }
-}
-
-.clients,
-.clients-page {
-  section { margin-bottom: 54px;
-    .block-hed {
-      @extend .col-md-8;
-      @extend .col-md-offset-2;
-    }
-    h2 {
-      @extend .col-md-6;
-      @extend .col-md-offset-3;
-    }
-  }
-}
-
-.clients--brand{
-  color: lighten($base-color, 40%);
-  font-weight: bold;
-  font-size: 27px;
-  height: 108px;
-  text-align: center;
-  img {
-    max-width: 200px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-
-
-// #About Us Sectiom
+// #About Us Section
 
 .about {
-  margin-top: 120vh;
+  background-color: $bg-color;
+  text-align: center;
 }
 
-.about--hed {
-  @extend .col-md-8;
-  @extend .col-md-offset-2;
-}
-
- .about--hed,
-.about--copy,
+ .about__hed,
+.about__copy,
    .services { opacity: 0; }
 
-.about--copy {
-  @extend .row;
+// Flexbox Safari Fallback Support
+@supports not (display: grid) {
+ .about__copy {
+   display: flex;
+   align-items: top;
 
-  .about--wrapper {
-    @extend .col-md-8;
-    @extend .col-md-offset-2;
+   .about__copy-item {
+     flex: 0 0 calc(33% - #{$gap});
+     margin: $gap/2;
+   }
+ }
 
-    display: flex;
-    justify-content: space-between;
+ .services {
+   align-items: center;
+   display: flex;
+   flex-wrap: wrap;
+   -webkit-flex-wrap: wrap;
 
-    @include mobile {
-      flex-direction: column;
-    }
+   .service { width: 25%; }
+ }
+}
+
+// CSS Grid -> Main Grid Framework I'm using
+.about__copy {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 40px;
+  margin: 0 auto;
+  width: 80%;
+
+  @include tablet {
+    display: block;
   }
-  .about--copy__item {
-    width: 30%;
-    @include mobile {
-      width: 60%;
-      margin: 27px auto;
+
+  .about__copy-item {
+    @include tablet {
+      margin: 0 auto;
+      width: 75%;
     }
   }
 }
 
 .services {
-  margin-top: 81px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 0 27px;
 
-  .services--row {
-     @extend .col-sm-10;
-     @extend .col-sm-offset-1;
+  @include tablet {
+    margin: 27px auto;
   }
-  div {
-    &:first-child { margin-bottom: 27px; }
-  }
-  .btn {
-    margin-top: $space-md auto;
-  }
+
+  .btn { margin: $space-md auto; }
 }
 
 .service {
-  @extend .col-sm-3;
-
+  border-radius: 4px;
+  padding: 18px 0;
   text-align: center;
-  img {
-    width: 60%;
+  transition: .25s;
+
+  svg { width: 25%; }
+
+  &:hover { background-color: #fafafa; }
+
+  @include desktop {
+    padding: 0 0 27px;
   }
-  h6 {
-    width: 100%;
-    margin-top: 27px;
-  }
+
+  h4 { width: 100%; }
 }
 
 .animate-scroll-pop {
@@ -199,7 +148,8 @@
   animation-delay: .15s;
 }
 
-.about--copy { animation-delay: .45s; }
+.about__copy { animation-delay: .45s;
+}
 
 .services { animation-delay: .65s; }
 

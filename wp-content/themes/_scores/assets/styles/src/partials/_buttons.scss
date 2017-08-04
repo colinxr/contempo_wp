@@ -6,7 +6,8 @@
 	color: $base-color;
 	cursor: pointer;
 	display: inline-block;
-	height: $space-md;
+	font-weight: 500;
+	height: 54px;
 	line-height: $space-md;
 	margin-top: $space;
 	text-align: center;
@@ -15,25 +16,48 @@
 	width: 300px;
 
 	@include border-radius(4px);
+	@include tablet { width: 220px; }
 
 	&:hover {
-        background-color: lighten($base-color, 5%);
-    }
-    &:active {
-        background-color: darken($base-color, 10%);
-    }
+  	background-color: lighten($base-color, 5%);
+		color: white;
+    text-decoration: none;
+  }
+  &:active {
+  	background-color: darken($base-color, 10%);
+		color: darken(white, 10%);
+  }
+	&:visited {
+  	text-decoration: none;
+  }
 
 }
 
 .btn-secondary {
 	border: 2px solid $base-color;
+	font-weight: 400;
 
 	&:hover {
-        background-color: lighten($base-color, 5%);
-    }
-    &:active {
-        background-color: darken($base-color, 15%);
-    }
+    background-color: lighten($base-color, 5%);
+		color: white;
+  }
+  &:active {
+    background-color: darken($base-color, 15%);
+  }
+}
+
+.btn-secondary__brand {
+	border: 0;
+	color: $accent-color;
+
+	&:hover {
+  	color: lighten($accent-color, 15%);
+		background-color: transparent;
+  }
+  &:active {
+    color: darken($accent-color, 10%);
+		background-color: transparent;
+  }
 }
 
 .btn-secondary__jumbo {
@@ -42,13 +66,18 @@
 	color: white;
 	margin-right: 20px;
 
+	@include tablet { margin-right: 10px; }
+	@include phablet { margin-right: 0; }
+
 	&:hover {
-        background-color: white;
-    }
-    &:active {
-        background-color: $base-color;
-        border-color: $base-color;
-    }
+		background-color: white;
+		color: $base-color;
+  }
+  &:active {
+  	background-color: $base-color;
+  	border-color: $base-color;
+		color: white;
+  }
 }
 
 .carousel--btn {

@@ -1,105 +1,41 @@
-$accent-color: #D75C37;
-    $bg-color: #F5F5F5;
-  $base-color: #67727A;
 
+@import "vendor/bootstrap/bootstrap", "vendor/slick";
 
-$space-big: 81px;
- $space-md: 54px;
-    $space: 27px;
+@import "partials/variables", "mixins/mixins", "partials/typography", "partials/card", "partials/buttons", "partials/slick", "partials/nav", "partials/home", "partials/jumbotron", "partials/client-carousel",   "partials/case-studies", "partials/page-head", "partials/grid-elements", "partials/brand-info", "partials/brand-carousel",  "partials/contact", "partials/posts", "partials/footer", "partials/modernizr";
 
+* { box-sizing: border-box; }
 
-$grid-columns:              12;
-$grid-gutter-width:         30px;
-$grid-float-breakpoint:     768px;
+html {
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
 
+body { background-color: $bg-color;
+  &.blog,
+  &.single { background-color: white; }
 
- $mobile-width: 480px;
- $tablet-width: 768px;
-   $sm-desktop: 992px;
-$desktop-width: 1200px;
-
-// Media Queries
-
-@mixin mobile {
-  @media screen and (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
-    @content;
+  &.blog {
+    .container { margin-bottom: 108px;}
   }
 }
 
-@mixin tablet {
-  @media screen and (max-width: #{$sm-desktop}) {
-    @content;
+.inset {
+  padding: 0 115px 0 115px;
+
+  @include sm-desktop {
+    padding: 0 30px 0 30px;
   }
 }
 
-@mixin desktop {
-  @media screen and (min-width: #{$desktop-width}) {
-    @content;
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+//Modernizr Fallbacks
+.no-js{
+  .scroll {
+    opacity: 1;
   }
-}
-
-// Border-radius
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
-}
-
-// Single side border-radius
-
-@mixin border-top-radius($radius) {
-  -webkit-border-top-right-radius: $radius;
-  border-top-right-radius: $radius;
-   -webkit-border-top-left-radius: $radius;
-   border-top-left-radius: $radius;
-   background-clip: padding-box;
-}
-@mixin border-right-radius($radius) {
-  -webkit-border-bottom-right-radius: $radius;
-  border-bottom-right-radius: $radius;
-     -webkit-border-top-right-radius: $radius;
-     border-top-right-radius: $radius;
-     background-clip: padding-box;
-}
-@mixin border-bottom-radius($radius) {
-  -webkit-border-bottom-right-radius: $radius;
-  border-bottom-right-radius: $radius;
-   -webkit-border-bottom-left-radius: $radius;
-   border-bottom-left-radius: $radius;
-   background-clip: padding-box;
-}
-@mixin border-left-radius($radius) {
-  -webkit-border-bottom-left-radius: $radius;
-  border-bottom-left-radius: $radius;
-     -webkit-border-top-left-radius: $radius;
-     border-top-left-radius: $radius;
-     background-clip: padding-box;
-}
-
-
-body {
-	background-color: $bg-color;
-}
-
-
-@import "vendor/bootstrap/bootstrap";
-
-@import "partials/typography", "partials/card", "partials/buttons", "partials/nav", "partials/home", "partials/jumbotron",  "partials/case-studies", "partials/brands", "partials/contact", "partials/footer";
-
-section {
-  @include make-row();
-}
-
-/* resets bootstrap columns and rows to allow unevens cols to be centered */
-.row-centered {
-    text-align:center;
-}
-
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* inline-block space fix */
-    margin-right:-4px;
-    vertical-align: top;
 }

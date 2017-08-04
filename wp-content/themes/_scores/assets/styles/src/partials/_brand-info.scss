@@ -1,0 +1,59 @@
+
+@supports not (display: grid) {
+	.edit-info {
+		.container {
+			display: flex;
+			div {
+				flex: 1;
+			}
+		}
+	}
+}
+
+.edit-info {
+
+	background-color: $bg-color;
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 20px;
+	}
+}
+
+.edit-info--col {
+	ul { margin-bottom: 27px; }
+
+	img {
+		border: 1px solid rgba( $base-color, .4 );
+		width: auto;
+		max-height: 350px;
+	}
+}
+
+.link-list {
+	li { margin-bottom: 2px; }
+
+	a {
+		color: $base-color;
+		border-bottom: 1px solid $base-color;
+		&:hover {
+			color: lighten($base-color, 15%);
+		}
+		&:active {
+			color: darken($base-color, 15%);
+		}
+	}
+}
+
+.social-list {
+	li {
+		font-size: 29px;
+		display: inline;
+		margin-right: 7%;
+	}
+	.fa-instagram { color: #405de6; }
+	.fa-facebook  { color: #3b5998; }
+	.fa-twitter   { color: #1da1f2; }
+	.fa-youtube 	{ color: #cd201f; }
+}

@@ -1,0 +1,71 @@
+.brand-carousel {
+	background-image: none;
+	overflow: hidden;
+	padding: 0;
+}
+
+.brand-col {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	@include sm-desktop {
+		height: 486px;
+	 }
+
+	&:before {
+		background: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.8));
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.attachment-carousel {
+		width: 100%;
+		object-fit: cover;
+		min-height: 486px;
+	 }
+
+	.carousel-content {
+		font-weight: 400;
+		left: 0;
+	  margin-left: auto;
+	  margin-right: auto;
+		position: absolute;
+	  right: 0;
+	  text-align: center;
+		top: 50%;
+		width: 45%;
+
+		-webkit-transform: translateY(-50%);
+						transform: translateY(-50%);
+
+  			@include sm-desktop { width: 50%; }
+
+		.logo {
+			width: 250px;
+			margin: 0 auto 27px auto;
+
+			@include tablet { width: 200px; }
+		}
+
+		h4 {
+			color: white;
+			font-weight: 300;
+			font-size: 29px;
+			line-height: 40.5px;
+			margin: 0 auto 27px;
+
+			@include sm-desktop {
+				font-size: 18px;
+				line-height: 27px;
+				margin-bottom: 27px;
+			}
+
+			@include phablet { display: none; }
+		}
+	}
+}

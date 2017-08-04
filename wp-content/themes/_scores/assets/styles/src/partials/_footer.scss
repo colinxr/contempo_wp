@@ -7,16 +7,19 @@
   h2 { color: white; }
 
   .btn {
-    @extend .col-md-4;
-    @extend .col-md-offset-4;
-
     border-color: $base-color;
   }
 }
 
 form {
-  @extend .col-md-6;
-  @extend .col-md-offset-3;
+  font-weight: 400;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+
+  @include tablet {
+    width: 85%;
+  }
 }
 
 .form-control {
@@ -26,23 +29,46 @@ form {
   margin-bottom: 27px;
 }
 
+@supports not (display: grid) {
+  footer {
+    .container {
+      display: flex;
+      align-items: top;
+      justify-content: center;
+
+      div {
+        flex: 0 0 calc(24% - #{$gap}/2);
+        margin: $gap/4;
+      }
+    }
+  }
+}
+
 footer {
   background-color: #4a4a4a;
   color: $bg-color;
+  .container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+
+    @include sm-desktop {
+      grid-template-columns: 33% 33%;
+      grid-gap: 50px;
+    }
+  }
 }
 
 footer a {
   color: $bg-color;
 }
-.footer-col {
-  @extend .col-sm-6;
-  @extend .col-md-3;
-}
 
-.footer-ul {
-  padding-top: 27px;
-}
+.footer__brand {
+  margin-top: -37px;
 
-.footer-brand {
-  margin-top: 27px;
+
+  svg {
+    @include sm-desktop {
+      width: 67%;
+    }
+  }
 }

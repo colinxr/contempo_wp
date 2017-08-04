@@ -9,42 +9,58 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="page-head page-head__case-studies">
+	<div class="container inset">
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
+					$hed = contempo_get_option( 'case_study_hed' );
+					$dek = contempo_get_option( 'case_study_dek' );
 				?>
+				<h1 class="page-title animate-pop-in"><?php echo esc_html($hed);?></h1>
+				<h3 class="archive-description animate-pop-in"><?php echo esc_html($dek);?></h3>
 			</header><!-- .page-header -->
+		<? endif;?>
+	</div><!-- .container -->
+</div><!-- .page-head -->
+
+<div class="block cases">
+	<div class="cases__row cases__row--archive">
+		<div class="container">
 
 			<?php
+
+			$args = array(
+				'post_type' => 'case_study',
+				'post__not_in' 	=> array(98, 100) // Excludes Custom Publishing Titles from case study array.
+			);
+
+			$query = new WP_Query( $args );
+
+			if ( $query->have_posts() ) {
+
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( $query->have_posts() ) : $query->the_post();
 
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( '_partials/posts-row', get_post_format() );
 
 			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
+		} else {
 			get_template_part( 'template-parts/content', 'none' );
+		} ?>
+		</div> <!-- end of .container -->
+	</div> <!-- end of .cases__row--digital -->
+</div> <!-- end of .block .case -->
 
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<?php get_template_part('/_partials/word-carousel') ; ?>
 
 <?php
 get_sidebar();

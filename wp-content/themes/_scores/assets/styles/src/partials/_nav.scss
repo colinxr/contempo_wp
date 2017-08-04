@@ -1,22 +1,52 @@
-.navbar { margin-bottom: 0; }
+body { padding-top: 81px; }
 
-.navbar-default { 
-	background-color: white;
-	height: 128px;
-	}
+.navbar {
+	height: 81px;
+	position: fixed;
+	top: 0;
+	transition: top .2s ease-in-out;
+	width: 100%;
+	z-index: 1000;
+
+	font-weight: 400;
+	margin-bottom: 0;
+}
+
+.wp-nav { top: 32px; } // accounts for WP-Admin Nav bar when user's logged in
+
+.nav-hide { top: -108px; }
+
+.navbar-default { background-color: white; }
+
+.navbar-brand {
+	width: 150px; //firefox fix
+}
 
 .navbar-brand__logo {
-	height: 54px; 
-	margin-top: 20px;
+	height: 50px;
+	margin-left: -25px;
 }
 
 .navbar-nav li a {
-	line-height: 54px;
-	padding-top: 42px;
+	cursor: pointer;
+	line-height: 74px;
+	padding: 0 15px;
 }
 
-.navbar-nav { 
-	li { 
-		.dropdown-menu { margin-top: -5px; }
+ul {
+	&.sub-menu {
+		display: none;
+		position: absolute;
+		top: 30px;
+
+		&:hover > ul {
+			display: block;
+		}
+
+		li {
+			float: none;
+			font-size: 18px;
+			width: 150px;
+		}
 	}
 }

@@ -1,0 +1,39 @@
+
+// Fix slick slide height issue
+.slick-slide {
+  height: auto;
+}
+
+.slick-slider {
+  .fa {
+    color: #fff;
+    font-size: 108px;
+    opacity: .3;
+    position: absolute;
+    top: 40%;
+    transition: opacity .1s;
+    z-index: 99;
+    &:hover {
+      opacity: .75;
+    }
+
+    @include tablet { font-size: 81px; }
+  }
+}
+
+.client-slider {
+  .fa {
+    color: $base-color;
+    opacity: .2;
+    top: 35%;
+  }
+  .slick-prev { left: -79px; }
+
+  .slick-next { right: -69px; }
+}
+
+.brand-slider {
+  .slick-prev { left: 0; }
+
+  .slick-next { right: 0; }
+}

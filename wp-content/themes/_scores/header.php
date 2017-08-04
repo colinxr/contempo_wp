@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <?php
 /**
  * The header for our theme
@@ -10,45 +11,46 @@
  */
 
 ?>
-
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
+	<?php wp_head(); ?>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta charset="utf-8">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="sprite_hide">
+		<?php require get_template_directory() . '/assets/svg/svg/symbols.svg';?>
+	</div>
 
-		<header class="navbar navbar-default">
+	<header class="navbar navbar-default nav-show <?php echo ( is_user_logged_in() ? 'wp-nav' : '' );?>">
 
-			<div class="container-fluid">
+		<div class="container-fluid">
 
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/imgs/contempo-media.svg" class="navbar-brand__logo"></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><svg class="icon contempo-media navbar-brand__logo"><use xlink:href="#contempo-media"></use></svg></a>
 
-				<div class="collapse navbar-collapse">
+			<?php
+				wp_nav_menu( array(
+					'menu' => 'header-menu',
+					'theme_location' => 'header-menu',
+					'container' => 'div',
+					'container_class' => 'collapse navbar-collapse',
+					'menu_class' => 'nav navbar-nav navbar-right',
+					'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+					'walker' => new wp_bootstrap_navwalker()
+					)
+				);
+			?>
 
-			    	<ul class="nav navbar-nav navbar-right">
-
-							<li class="dropdown">
-				      	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
-
-								<ul class="dropdown-menu">
-									<li><a href="#">Sharp</a></li>
-				          <li><a href="#">S/ magazine</a></li>
-							  </ul></li>
-				      <li><a href="#">Contract Publishing</a></li>
-				      <li><a href="#">Case Studies</a></li>
-				      <li><a href="#">Press</a></li>
-				      <li><a href="#">Contact</a></li>
-
-			      </ul>
-
-				</div>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
 			</div>
-
-		</header>
+	</header>

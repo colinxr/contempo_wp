@@ -1,14 +1,69 @@
-.contact--main {
+// Flexbox Safari Fallback Support
+ @supports not (display:grid){
+   .contact__main {
+     .container {
+       display: flex;
+       flex-flow: row wrap;
+  		 justify-content: flex-start;
+       padding: 5px;
+
+       .main-bio {
+         flex: 1;
+         margin: 5px;
+         width: 50%;
+       }
+
+       .main-photo {
+         flex: 1;
+         margin: 5px;
+         width: 33%;
+       }
+     }
+   }
+
+   .contact__row {
+     .container {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       padding: 5px;
+
+       .card-contact {
+         flex: 1;
+         margin: 5px;
+       }
+     }
+   }
+
+   .contact-staff {
+     .container {
+       display: flex;
+
+       .contact-col {
+         flex: 1;
+       }
+     }
+   }
+ }
+
+.contact__main {
   background-color: white;
+
+  .container {
+    display: grid;
+    grid-template-columns: 50% 33%;
+    grid-gap: 80px;
+  }
 
   &.michael {
     background-color: $bg-color;
+
+    .container {
+      grid-template-columns: 40% 50%;
+    }
   }
 
   .main-bio {
-    @extend .col-md-5;
-    @extend .col-md-offset-1;
-
     h3 {
       line-height: 40.5px;
       margin: 0;
@@ -19,19 +74,18 @@
   }
 
   .main-photo {
-    @extend .col-md-4;
-    @extend .col-md-offset-1;
-
     margin-top: 27px;
   }
 }
 
-.contact--row {
+.contact__row {
   background-color: white;
-}
 
-.contact--row__col {
-  @extend .col-md-4;
+  .container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+  }
 }
 
 .card-contact {
@@ -40,11 +94,15 @@
 
 .contact-staff {
   background-color: $bg-color;
+
+  .container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+  }
 }
 
-.contact--col {
-  @extend .col-sm-6;
-  @extend .col-md-4;
+.contact-col {
 
   .contact-list li {
     margin-bottom: 27px;

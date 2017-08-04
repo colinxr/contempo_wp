@@ -4,37 +4,101 @@
   }
 }
 
-.cases--row__digital,
-.cases--row__event,
-.cases--row__print { background-color: white; }
+@supports not (display: grid) {
+  .cases__row{
+    .container {
+      display: flex;
+      align-items: top;
+      justify-content: center;
+    }
 
-.cases--row__social,
-.cases--row__video { background-color: $bg-color;}
+    h3 { letter-spacing: -.75px; }
+  }
 
-.cases--row {
-  padding: 81px 0 81px 0;
+  .cases__row--home {
+    .container {
+      div {
+        flex: 0 0 calc(33% - #{$gap}/2);
+        margin: $gap/4;
+      }
+    }
+  }
 
+  .cases__row--page {
+    .card-inline {
+      flex: 0 0 calc(33% - #{$gap});
+      margin: $gap/2;
+    }
+  }
+
+  .cases__row--archive {
+    .container {
+      flex-wrap: wrap;
+      justify-content: left;
+    }
+
+    .card-inline {
+      flex: 0 0 calc(33% - #{$gap});
+      margin: $gap/2;
+    }
+  }
 }
 
-.cases--intro {
+.cases__row {
+  background-color: $bg-color;
+  padding: 108px 0 108px 0;
 
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
 }
 
-.cases--row__col {
-  @extend .col-sm-6;
-  @extend .col-md-3;
+.cases__row--digital,
+.cases__row--event,
+.cases__row--print { background-color: $bg-color; }
 
-  &.card--case {
+.cases__row--video {
+  .container {
+    grid-template-columns: 25% 50% 25%;
+  }
+  .video {
     margin-top: 81px;
   }
-
-  h2 {
-    margin-bottom: 27px;
+  iframe{
+    width: 100%;
+    height: 390px;
   }
+}
+
+.cases__row--page,
+.cases__row--archive {
+  background-color: white;
+}
+
+.cases__row--archive {
+  padding-bottom: 54px;
+
+  .card__case--page { margin-bottom: 54px; }
+}
+
+.cases__row {
+  h2 { margin-bottom: 27px; }
 
   &.video {
-    @extend .col-md-6;
-
     background-color: $base-color;
     height:  361px;
     margin-top: 81px;
@@ -50,3 +114,5 @@
 .clients-page {
   background-color: white;
 }
+
+.case-img-list__img { margin-bottom: 54px; }

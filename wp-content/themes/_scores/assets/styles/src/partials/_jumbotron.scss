@@ -1,13 +1,13 @@
+
+
 // Homepage Jumbotrons //
 
-.jumbotron {
+.jumbotron__home {
   background-color: $base-color !important;
   background: url('../../imgs/contempo-jumbotron.jpg') no-repeat center;
   background-size: cover;
   height: 90vh;
-  margin-bottom: 0;
   min-height: 781px;
-  padding-top: 216px;
   position: relative;
   text-align: center;
   &:before {
@@ -26,44 +26,44 @@
     animation-delay: .3s; }
 }
 
-.jumbotron--hed {
-  width: 65%;
+.jumbotron__hed {
+  left: 0;
   margin: 0 auto;
-  @include tablet {
-    width: 100%;
-  }
-  @include mobile {
-    width: 90%;
-  }
+  max-width: 700px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 67%;
+
+  -webkit-transform: translateY(-65%);
+          transform: translateY(-65%);
+
+  @include sm-desktop { width: 80%; }
+  @include phablet { width: 90%; }
 }
 
-.jumbotron--brand {
+.jumbotron__home-brand {
   height: 100vh;
+  position: relative;
 }
 
-.jumbotron--brand__sharp {
-  background: url(../imgs/contempo-jumbotron1.jpg) no-repeat center;
+.carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.jumbotron__home-brand--custom {
+  background: url('../imgs/contract/example-tk.jpg') no-repeat top;
   background-size: cover;
-}
-
-.jumbotron--brand__smag {
-  background: url(../imgs/Slide-3.jpg) no-repeat center;
-  background-size: cover;
-  margin-bottom: 108px;
-}
-
-
-
-// Brands Page Jumbotrons //
-
-.jumbotron--page {
-	height: 500px;
-	min-height: 500px;
-	padding: 108px 0;
-	text-align: left;
-
-	&:before {
-    background: none; //linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5));
+  &:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5));
     content: "";
     position: absolute;
     top: 0;
@@ -71,9 +71,68 @@
     bottom: 0;
     left: 0;
   }
+
+  h2 {
+    margin: 0 auto;
+  }
 }
 
-.jumbotron--page__brands {
+.jumbotron__home-brand--sharp{
+  background: url('../imgs/contempo-jumbotron.jpg') no-repeat top;
+  background-size: cover;
+}
+
+.jumbotron__home-brand--smag {
+  background: url('../imgs/Slide-3.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.jumbotron,
+.jumbotron__hero,
+.jumbotron__page {
+  margin-bottom: 0;
+}
+
+.screen {
+  overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.jumbotron__page {
+  height: 486px;
+  background-size: cover;
+
+  transition: filter .5s;
+
+  -webkit-filter: blur(4px);
+     -moz-filter: blur(4px);
+       -o-filter: blur(4px);
+      -ms-filter: blur(4px);
+          filter: blur(4px);
+
+@include sm-desktop { height: 378px; }
+@include tablet { height: 324px; }
+}
+
+
+.jumbotron__page--sharp {
+  background: url('../imgs/sharp/sharp-desktop.jpg') no-repeat top;
+  background-size: cover;
+}
+
+.jumbotron__page--smag {
+  background: url('../imgs/Slide-3.jpg') no-repeat center;
+  margin-bottom: 108px;
+}
+
+.jumbotron__page--contract{
+  background: url('../imgs/contract/example-tk.jpg') no-repeat top;
+  background-size: cover;
+}
+
+// Brands Page Jumbotrons //
+
+.jumbotron__page--brands {
 	background: url('../imgs/contempo-jumbotron.jpg') no-repeat center;
 	background-size: cover;
 	background-position: center;
@@ -83,7 +142,7 @@
 	}
 }
 
-.jumbotron--page__hed {
+.jumbotron__page--hed {
   left: 0;
   margin-left: auto;
   margin-right: auto;
@@ -91,20 +150,18 @@
   right: 0;
   top: 50%;
   text-align: center;
-  width: 55%;
+  width: 45%;
 
 -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
 }
 
 // Carousel Jumbotrons //
-
-
 .brand-carousel {
 	background-image: none;
 	padding: 0;
-	height: auto;
-	min-height: 500px;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 .item {
@@ -127,7 +184,10 @@
 .carousel-caption {
   font-weight: 300;
   left: 0;
+  margin-left: auto;
+  margin-right: auto;
   right: 0;
+  text-align: center;
   top: 50%;
 
   -webkit-transform: translateY(-50%);
@@ -140,7 +200,7 @@
 
   .logo {
     width: 25%;
-    margin-bottom: 54px;
+    margin: 0 auto 27px auto;
   }
 
   .sharp {
@@ -151,11 +211,9 @@
     width: 45%;
   }
 
-  h4 {
+  h3 {
     font-weight: 300;
-    font-size: 18px;
-    line-height: 27px;
-    margin: 0 auto 54px;
-    width: 40%;
+    margin: 0 auto 40.5px;
+    width: 45%;
    }
 }

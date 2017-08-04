@@ -1,0 +1,23 @@
+.page-head {
+  background-color: white;
+  padding: 128px 0 95px 0;
+  h3 {
+    width: 90%;
+  }
+}
+
+.page-logo { height: 81px; }
+
+.brand--info {
+	background-color: white;
+	padding-top: 81px;
+	text-align: center;
+
+	h2 {
+		margin: 0 auto $space-md;
+		width: 55%; }
+ }
+
+ svg {
+	 color: $base-color;
+ }

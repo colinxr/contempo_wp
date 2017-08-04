@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="71px" height="72px" viewBox="0 0 71 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>thumbs-up</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Homepage" transform="translate(-833.000000, -1968.000000)" stroke="#6a6b6c" stroke-width="2">
+            <g id="Who-We-Are" transform="translate(0.000000, 906.000000)">
+                <g id="Services" transform="translate(176.000000, 743.000000)">
+                    <g id="Social" transform="translate(560.595112, 280.268861)">
+                        <g transform="translate(50.000000, 0.000000)" id="thumbs-up">
+                            <g transform="translate(48.000000, 40.000000)">
+                                <path d="M41.4,24.15 L41.4,10.35 C41.4,4.63385284 36.7661472,2.62012634e-15 31.05,-4.4408921e-16 L17.25,31.05 L17.25,69 L56.166,69 C59.6066393,69.0388965 62.550091,66.5369626 63.066,63.135 L67.827,32.085 C68.1307933,30.0835009 67.5402953,28.0495654 66.2119119,26.5219245 C64.8835285,24.9942836 62.9512934,24.127076 60.927,24.15 L41.4,24.15 Z M17.25,69 L6.9,69 C3.08923523,69 0,65.9107648 0,62.1 L0,37.95 C-7.66053887e-16,34.1392352 3.08923523,31.05 6.9,31.05 L17.25,31.05 L17.25,69 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

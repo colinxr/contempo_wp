@@ -1,0 +1,199 @@
+// Flexbox Safari Fallback Support
+ @supports not (display:grid){
+	 .grid__brand-info {
+		 display: flex;
+		 flex-flow: row wrap;
+		 justify-content: flex-start;
+
+		 .row-one,
+		 .row-two,
+		 .row-three {
+			 flex: 0 1 33%;
+		 }
+
+		 .row-one{
+			 &:nth-child(2){
+				 flex-grow: 3;
+			 }
+		 }
+	 }
+
+   .context__contract {
+     .grid {
+       display: flex;
+       flex-wrap: wrap;
+       width: 80%;
+
+       .box {
+         flex: 0 0 calc(50% - #{$gap});
+         margin: $gap/2;
+       }
+     }
+   }
+
+   .our-approach {
+     .grid {
+       display: flex;
+       flex-wrap: wrap;
+       width: 80%;
+
+       .our-approach__item,
+       .our-approach__plus {
+         flex: 0 0 calc(50% - #{$gap});
+         margin: $gap/2;
+       }
+
+       .our-approach__item:nth-of-type(1) { order: 1 }
+
+       .our-approach__item:nth-of-type(2) { order: 3 }
+
+       .our-approach__item:nth-of-type(3) { order: 5 }
+
+       .our-approach__plus:nth-of-type(1) { order: 2 }
+
+       .our-approach__plus:nth-of-type(2) { order: 4 }
+
+       .our-approach__plus:nth-of-type(3) { order: 6 }
+     }
+   }
+ }
+
+// CSS Grid -> Main Grid Framework I'm using
+.grid__brand-info {
+	grid-template-columns: 30%;
+	grid-template-rows: 145px 145px 1fr;
+}
+ .box {
+   h2 {
+     font-family: $font-stack;
+     font-weight: 500;
+		 margin-top: 0;
+   }
+ }
+
+ .row-one {
+	 grid-row: 1;
+ }
+
+ .row-two {
+	 grid-row: 2;
+ }
+
+.row-three {
+	grid-row: 3;
+}
+
+.grid__page-cases {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-gap: 15px;
+}
+
+
+.context {
+  background-color: white;
+  padding: 108px 0;
+}
+
+.context__contract{ padding-bottom: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-gap: 30px;
+  &.grid--our-approach{
+    grid-template-columns: 47% 25%;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 133px
+  }
+}
+
+h3 {
+  &.animate-pop-in {
+    animation-delay: .25s;
+  }
+}
+
+.our-approach__item:nth-of-type(1) {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  &::before {
+    content: "1.";
+    color: #C3D7DF;
+    font-family: $heading-stack;
+    font-size: 40px;
+    left: -56px;
+    position: relative;
+    top: 62px;
+  }
+}
+
+.our-approach__item:nth-of-type(2) {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  &::before {
+    content: "2.";
+    color: #C3D7DF;
+    font-family: $heading-stack;
+    font-size: 40px;
+    position: relative;
+    left: -56px;
+    top: 62px;
+
+  }
+}
+
+.our-approach__item:nth-of-type(3) {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  &::before {
+    content: "3.";
+    color: $light-blue;
+    font-family: $heading-stack;
+    font-size: 40px;
+    left: -56px;
+    position: relative;
+    top: 62px;
+
+  }
+}
+
+.our-approach__plus {
+  p {
+    color: lighten($base-color, 20%);
+    margin-top: 190px;
+    opacity: 0;
+    transition: all .35s ease-in-out;
+  }
+}
+
+.our-approach__plus:nth-of-type(1) {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.our-approach__plus:nth-of-type(2) {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.our-approach__plus:nth-of-type(3) {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.inView {
+  p {
+    color: $base-color;
+    opacity: 1;
+    margin-top: 123px;
+ }
+}
+
+.inView:after {
+  content: url('../../imgs/arrow_1.png');
+  left: -155px;
+  opacity: .5;
+  position: relative;
+  bottom: 0px;
+}
