@@ -269,7 +269,7 @@ function contempo_contact_metaboxes() {
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'General Info', 'cmb2' ),
 		'object_types'  => array( 'page' ),
-		'show_on'      => array( 'key' => 'id', 'value' => array( 24 ) ),
+		'show_on'      => array( 'key' => 'id', 'value' => array( 24 ), 'key' => 'id', 'value' => array( 107 ) ),
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true,
