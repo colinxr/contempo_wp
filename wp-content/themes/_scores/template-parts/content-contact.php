@@ -92,7 +92,7 @@
   </div> <!-- end of .container -->
 </div>
 
-<div class="block contact__main michael">
+<!-- <div class="block contact__main michael">
 	<div class="container inset">
     <img src="<?php echo get_template_directory_uri() ;?>/assets/imgs/contact/michael-lafave.jpg" class="main-photo michael">
 
@@ -102,8 +102,8 @@
 			<p><?php echo esc_html( $cd_bio ); ?>
       <h4><a href="mailto:<?php echo esc_html( $cd_email ); ?>">Email Michael</a></h4>
     </div>
-	</div> <!-- end of .container -->
-</div> <!-- end of .block .--info -->
+	</div> <!-- end of .container
+</div> <!-- end of .block .--info
 
 <div class="block contact__main">
 	<div class="container inset">
@@ -115,7 +115,7 @@
     </div>
 
     <img src="<?php echo get_template_directory_uri() ;?>/assets/imgs/contact/john-mcgouran.jpg" class="main-photo">
-	</div> <!-- end of .container -->
+	</div> <!-- end of .container
 </div> <!-- end of .block .--info -->
 
 <div class="block contact-staff">
