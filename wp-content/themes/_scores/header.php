@@ -23,6 +23,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta property="og:type" content="business.business">
 	<meta property="og:title" content="Contempo Media">
+	<meta property="og:description" content="Canada's leading luxury content marketer." />
 	<meta property="og:url" content="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<meta property="og:image" content="<?php echo esc_html($img); ?>	">
 	<meta property="business:contact_data:street_address" content="372 Richmond St">
