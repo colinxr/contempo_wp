@@ -43,4 +43,3 @@
 		</div><!-- .entry-content -->
 	<?php endif; ?>
 </article><!-- #post-## -->
-<?php get_footer();?>
