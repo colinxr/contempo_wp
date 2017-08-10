@@ -143,13 +143,13 @@ function contempo_scripts() {
 	wp_register_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'font-awesome' );
 
-	wp_register_script( 'modernizr', get_template_directory_uri() . '/assets/js/build/modernizr.js', array( 'jquery' ), '2.8.3', false );
-	wp_enqueue_script( 'modernizr' );
+	//wp_register_script( 'modernizr', get_template_directory_uri() . '/assets/js/build/modernizr.js', array( 'jquery' ), '2.8.3', false );
+	//wp_enqueue_script( 'modernizr' );
 
-	wp_register_script( 'vendor', get_template_directory_uri() . '/assets/js/build/vendor.js', array( 'jquery' ), '1.0', true );
+	wp_register_script( 'vendor', get_template_directory_uri() . '/assets/js/build/vendor.min.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'vendor' );
 
-	wp_register_script( 'contempo-app', get_template_directory_uri() . '/assets/js/build/app.js', array( 'vendor' ), '1.0', true  );
+	wp_register_script( 'contempo-app', get_template_directory_uri() . '/assets/js/build/app.min.js', array( 'vendor' ), '1.0', true  );
 	wp_enqueue_script( 'contempo-app' );
 
 }
