@@ -16,9 +16,20 @@
 	<?php wp_head(); ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php $img = contempo_get_option( 'home_jumbotron_img' );?>
+	<link rel="canonical" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta property="og:type" content="business.business">
+	<meta property="og:title" content="Contempo Media">
+	<meta property="og:url" content="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<meta property="og:image" content="<?php echo esc_html($img); ?>	">
+	<meta property="business:contact_data:street_address" content="372 Richmond St">
+	<meta property="business:contact_data:locality" content="Toronto">
+	<meta property="business:contact_data:region" content="Ontario">
+	<meta property="business:contact_data:postal_code" content="m5v 1x6">
+	<meta property="business:contact_data:country_name" content="Canada">
 </head>
 
 <body <?php body_class(); ?>>
