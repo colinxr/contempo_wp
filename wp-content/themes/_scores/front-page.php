@@ -27,8 +27,8 @@ get_header(); ?>
 			<h1 class="animate-pop-in"><?php echo esc_html($hed); ?></h1>
 			<h3 class="animate-pop-in"><?php echo esc_html($dek); ?></h3>
 			<div class="cta animate-pop-in">
-		   	<a class="btn btn-secondary__jumbo" href="contract.html" role="button">Contract Publishing</a>
-		   	<a class="btn" href="case-studies.html" role="button">See Our Work</a>
+		   	<a class="btn btn-secondary__jumbo" href="http://contempomedia.wpengine.com/contract-publishing/" role="button">Contract Publishing</a>
+		   	<a class="btn" href="https://contempomedia.wpengine.com/case-studies/" role="button">See Our Work</a>
 		  </div>
 		</div>
 
@@ -121,7 +121,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<a class="btn btn-secondary block-cta" href="#form">How Can We Help?</a>
+		<a class="btn btn-secondary block-cta" href="#contactForm">How Can We Help?</a>
 
 	</div> <!-- end of .container -->
 </div> <!-- end of .block .about-->
@@ -157,7 +157,7 @@ get_header(); ?>
 				}
 			?>
 		</div> <!-- end of .container -->
-		
+
 		<a class="btn btn-secondary block-cta" href="contempo/case-studies">See More Work</a>
 
 	</div> <!-- end of .cases-row__digital -->
