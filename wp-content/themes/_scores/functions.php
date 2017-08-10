@@ -157,7 +157,9 @@ add_action( 'wp_enqueue_scripts', 'contempo_scripts' );
 
 function dns_prefetch() {
 	echo '<meta http-equiv="x-dns-prefetch-control" content="on">
-	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">';
+	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+	<link rel="dns-prefetch" href="//google-analytics.com">
+	<link rel="dns-prefetch" href="//www.google-analytics.com">';
 
 }
 add_action( 'wp_head', 'dns_prefetch', 0);
