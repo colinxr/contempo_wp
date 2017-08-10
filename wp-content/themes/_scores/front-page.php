@@ -27,8 +27,8 @@ get_header(); ?>
 			<h1 class="animate-pop-in"><?php echo esc_html($hed); ?></h1>
 			<h3 class="animate-pop-in"><?php echo esc_html($dek); ?></h3>
 			<div class="cta animate-pop-in">
-		   	<a class="btn btn-secondary__jumbo" href="http://contempomedia.wpengine.com/contract-publishing/" role="button">Contract Publishing</a>
-		   	<a class="btn" href="https://contempomedia.wpengine.com/case-studies/" role="button">See Our Work</a>
+		   	<a class="btn btn-secondary__jumbo" href="<?php bloginfo( 'url' ); ?>/contract-publishing/" role="button">Contract Publishing</a>
+		   	<a class="btn" href="<?php bloginfo( 'url' ); ?>/case-studies/" role="button">See Our Work</a>
 		  </div>
 		</div>
 
