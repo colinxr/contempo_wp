@@ -4,6 +4,7 @@
 .cvs
 *.bak
 *.swp
+.htaccess
 Thumbs.db
 components
 styles/modules

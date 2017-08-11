@@ -158,7 +158,9 @@ get_header(); ?>
 			?>
 		</div> <!-- end of .container -->
 
-		<a class="btn btn-secondary block-cta" href="contempo/case-studies">See More Work</a>
+		<div class="container__btn">
+			<a class="btn btn-secondary block-cta" href="contempo/case-studies">See More Work</a>
+		</div>
 
 	</div> <!-- end of .cases-row__digital -->
 </div> <!-- end of .block .cases -->
@@ -172,6 +174,7 @@ get_header(); ?>
 		<div class="carousel-caption custom scroll animate-scroll-pop">
 			<h2 class="logo"><?php echo get_the_title($post->ID); ?></h2>
 			<h3 class><?php the_excerpt($post->ID); ?></h3>
+
 			<a class="btn btn-secondary carousel--btn"  href="<?php the_permalink($post->ID); ?>">See Inside</a>
 		</div>
 	</div>

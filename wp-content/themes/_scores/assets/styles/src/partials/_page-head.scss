@@ -4,6 +4,10 @@
   h3 {
     width: 90%;
   }
+
+  @include mobile {
+    padding: 81px 0 0;
+  }
 }
 
 .page-logo { height: 81px; }

@@ -48,6 +48,10 @@
   background-color: $bg-color;
   padding: 108px 0 108px 0;
 
+  @include mobile {
+    padding: 54px 0 54px;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

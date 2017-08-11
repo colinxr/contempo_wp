@@ -33,6 +33,19 @@
 
 }
 
+.jumbotron__home {
+	.btn {
+		@include mobile {
+			margin-top: 13px;
+		}
+	}
+}
+
+.container__btn {
+	margin-top: 54px;
+	text-align: center;
+}
+
 .btn-secondary {
 	border: 2px solid $base-color;
 	font-weight: 400;

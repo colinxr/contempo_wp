@@ -7,7 +7,6 @@
   background: url('../../imgs/contempo-jumbotron.jpg') no-repeat center;
   background-size: cover;
   height: 90vh;
-  min-height: 781px;
   position: relative;
   text-align: center;
   &:before {
@@ -40,6 +39,10 @@
 
   @include sm-desktop { width: 80%; }
   @include phablet { width: 90%; }
+  @include mobile {
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+  }
 }
 
 .jumbotron__home-brand {
@@ -77,12 +80,12 @@
   }
 }
 
-.jumbotron__home-brand--sharp{
+.jumbotron__home-brand--sharp-magazine{
   background: url('../imgs/contempo-jumbotron.jpg') no-repeat top;
   background-size: cover;
 }
 
-.jumbotron__home-brand--smag {
+.jumbotron__home-brand--s-magazine {
   background: url('../imgs/Slide-3.jpg') no-repeat center;
   background-size: cover;
 }
@@ -203,7 +206,7 @@
     margin: 0 auto 27px auto;
   }
 
-  .sharp {
+  .logo__sharp-magazine {
     max-height: 108px;
   }
 

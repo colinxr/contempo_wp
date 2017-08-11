@@ -8,11 +8,16 @@
 	background-color: transparent;
 	border: 0;
 	margin-bottom: 0;
+
+	@include mobile { margin-bottom: 27px; }
 }
 
 .card-inline__info {
 	margin-top: 27px;
 	width: 100%;
+	@include mobile {
+		margin-top: 0px;
+	}
 }
 
 .card__header {

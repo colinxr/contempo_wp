@@ -1,4 +1,10 @@
-.block { padding: 108px 0 108px; }
+.block {
+  padding: 108px 0 108px;
+
+  @include mobile {
+    padding: 27px 0 54px;
+  }
+}
 
 .brands {
   background-color: white;
@@ -110,6 +116,11 @@
       margin: 0 auto;
       width: 75%;
     }
+
+    @include mobile {
+      margin-bottom: 27px;
+      width: 100%;
+    }
   }
 }
 
@@ -120,6 +131,10 @@
 
   @include tablet {
     margin: 27px auto;
+  }
+
+  @include mobile {
+    display: none;
   }
 
   .btn { margin: $space-md auto; }

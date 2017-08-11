@@ -20,6 +20,10 @@ form {
   @include tablet {
     width: 85%;
   }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .form-control {
