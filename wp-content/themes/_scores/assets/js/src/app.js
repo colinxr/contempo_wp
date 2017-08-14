@@ -2,17 +2,31 @@
 
 $(document).ready(function(){
 
-	// Progressive Load the Homepage Jumbotron
+	//*****
+	// Dropdown Nav Menu
+	//*****
+	
+	$('ul.nav li.dropdown').hover(function() {
+  	$(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(500);
+	}, function() {
+  	$(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
+	});
+
+	//*****
+	// Progressive Load the Homepage Jumbotron Img
+	//*****
 
 	var jumbotron = $('.jumbotron__home');
 	var imgSmall 	= $('.imgSmall');
 
+	// load the small placeholder image
 	var img = new Image();
 	img.src = imgSmall.attr('src');
 	img.onload = function() {
 		imgSmall.addClass('loaded');
 	};
 
+	// load the main background image, then hide the placeholder
 	var imgLarge = new Image();
 	imgLarge.src = jumbotron.data('img');
 	imgLarge.onload = function(){
@@ -22,13 +36,10 @@ $(document).ready(function(){
 		imgSmall.css('opacity', 0);
 	};
 
-	// Dropdown Nav Menu
-	$('ul.nav li.dropdown').hover(function() {
-  	$(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(500);
-	}, function() {
-  	$(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
-	});
 
+	//*****
+	// Scroll functions for Navbar & Page Jumbotron Images
+	//*****
 
 	var didScroll = false;
 
@@ -82,7 +93,9 @@ $(document).ready(function(){
 		lastScrollTop = st;
 	}
 
+	//*****
 	// Slick Client Slider Initialization
+	//*****
 	$('.client-slider').slick({
 		arrows: true,
 		prevArrow: '<i class="slick-prev fa fa-chevron-left"></i>',
@@ -103,7 +116,10 @@ $(document).ready(function(){
 		}]
 	});
 
+	//*****
 	// Slick Brand Slider Initialization
+	//*****
+
 	// Check if two brand slides exist, if so initialize Slick
 	if ( $('.brand-col').length > 1 ){
 
@@ -120,96 +136,99 @@ $(document).ready(function(){
 
 
 
-// TO DO
-// custom custom script
+	//*****
+	// Scroll Animation: Check when element scrolls into frame, then adds class for CSS animation
+	//*****
 
-$.fn.visible = function(partial) {
-  var $t            = $(this),
-      $w            = $(window),
-      viewTop       = $w.scrollTop(),
-      viewBottom    = viewTop + $w.height(),
-      _top          = $t.offset().top,
-      _bottom       = _top + $t.height(),
-      compareTop    = partial === true ? _bottom : _top,
-      compareBottom = partial === true ? _top : _bottom;
+	$.fn.visible = function(partial) {
+	  var $t            = $(this),
+	      $w            = $(window),
+	      viewTop       = $w.scrollTop(),
+	      viewBottom    = viewTop + $w.height(),
+	      _top          = $t.offset().top,
+	      _bottom       = _top + $t.height(),
+	      compareTop    = partial === true ? _bottom : _top,
+	      compareBottom = partial === true ? _top : _bottom;
 
-	return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+		return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
 
-};
+	};
 
-var win = $(window);
+	var win = $(window);
 
-var allMods = $(".scroll");
+	var allMods = $(".scroll");
 
-allMods.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible");
-  }
-});
+	allMods.each(function(i, el) {
+	  var el = $(el);
+	  if (el.visible(true)) {
+	    el.addClass("already-visible");
+	  }
+	});
 
-win.scroll(function(event) {
+	win.scroll(function(event) {
 
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("animate-scroll-pop");
-    }
-  });
-
-});
-
-
-// Contact Form Submission js
-$("#contactForm").validator().on("submit", function (event) {
-  if (event.isDefaultPrevented()) {
-  	submitMsg(false, "Please fill in the required fields.");
-  } else {
-    // everything looks good!
-    event.preventDefault();
-    submitForm();
-  }
-});
-
-var submitForm = function(){
-  // Initiate Variables With Form Content
-  var firstName = $("#formFirstName").val();
-	var lastName 	= $("#formLastName").val();
-  var email 		= $("#formEmail").val();
-	var title 		= $("#formTitle").val();
-	var company 	= $("#formCompany").val();
-  var message 	= $("#formMessage").val();
-
-  $.ajax({
-    type: "POST",
-    url: "php/form-process.php",
-    data: "firstName=" + firstName + "&lastName=" + lastName + "&email=" + email + "&title=" + title + "&company=" + company + "&message=" + message,
-    success : function(text){
-	  	if (text == "success"){
-	    	formSuccess();
-			} else {
-	    	submitMsg(false,text);
+	  allMods.each(function(i, el) {
+	    var el = $(el);
+	    if (el.visible(true)) {
+	      el.addClass("animate-scroll-pop");
 	    }
-    }
-  });
-}
+	  });
 
-var formSucces = function(){
-	$("#contactForm")[0].reset();
-	submitMsg(true, "Thanks for submitting your message.")
-}
+	});
 
-var submitMsg = function(valid, msg){
-	var msgClasses;
+	//*****
+	// Contact Form Submission js
+	//*****
 
-  if(valid){
-		msgClasses = "h3 text-center animated text-success";
-  } else {
-		msgClasses = "h3 text-center text-danger";
-  }
+	$("#contactForm").validator().on("submit", function (event) {
+	  if (event.isDefaultPrevented()) {
+	  	submitMsg(false, "Please fill in the required fields.");
+	  } else {
+	    // everything looks good!
+	    event.preventDefault();
+	    submitForm();
+	  }
+	});
 
-  $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
-}
+	var submitForm = function(){
+	  // Initiate Variables With Form Content
+	  var firstName = $("#formFirstName").val();
+		var lastName 	= $("#formLastName").val();
+	  var email 		= $("#formEmail").val();
+		var title 		= $("#formTitle").val();
+		var company 	= $("#formCompany").val();
+	  var message 	= $("#formMessage").val();
+
+	  $.ajax({
+	    type: "POST",
+	    url: "php/form-process.php",
+	    data: "firstName=" + firstName + "&lastName=" + lastName + "&email=" + email + "&title=" + title + "&company=" + company + "&message=" + message,
+	    success : function(text){
+		  	if (text == "success"){
+		    	formSuccess();
+				} else {
+		    	submitMsg(false,text);
+		    }
+	    }
+	  });
+	}
+
+	var formSucces = function(){
+		$("#contactForm")[0].reset();
+		submitMsg(true, "Thanks for submitting your message.")
+	}
+
+	var submitMsg = function(valid, msg){
+		var msgClasses;
+
+	  if(valid){
+			msgClasses = "h3 text-center animated text-success";
+	  } else {
+			msgClasses = "h3 text-center text-danger";
+	  }
+
+	  $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+	}
 
 })
 }) (jQuery);
