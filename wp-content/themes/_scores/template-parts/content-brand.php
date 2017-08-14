@@ -136,7 +136,7 @@
 	<div class="brand-slider">
 		<div class="brand-col">
 			<?php echo $carousel_bg; ?>
-				<div class="carousel-content">
+				<div class="carousel-content brand_slide_one">
 	      	<?php echo $carousel_logo; ?>
 	        <h4><?php echo esc_html( $carousel_desc ) ;?></h4>
 					<a class="btn btn-secondary carousel--btn" type="submit" id="form-submit" href="<?php echo $special_media_kit; ?>">Download Media Kit</a>
@@ -150,7 +150,7 @@
 		<?php else : ?>
 			<div class="brand-col">
 				<?php echo $carousel2_bg; ?>
-				<div class="carousel-content sharp-watch">
+				<div class="carousel-content brand_slide_two">
 					<?php echo $carousel2_logo; ?>
 					<h4><?php echo esc_html( $carousel2_desc ) ;?></h4>
 					<a class="btn btn-secondary carousel--btn" type="submit" id="form-submit" href="#">See Sharp Watch</a>
@@ -163,7 +163,7 @@
 
 <div class="block cases cases--page">
 	<div class="cases__row cases__row--page">
-		<div class="container">
+		<div class="container scroll">
 			<?php
 
 				$brand = get_post_field( 'post_name', get_post() ); // get brand slug to match with case studies category, which are sorted by Brands.

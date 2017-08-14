@@ -2,6 +2,8 @@
 
 $(document).ready(function(){
 
+	// Progressive Load the Homepage Jumbotron
+
 	var jumbotron = $('.jumbotron__home');
 	var imgSmall 	= $('.imgSmall');
 

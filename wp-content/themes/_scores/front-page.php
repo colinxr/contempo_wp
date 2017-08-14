@@ -132,7 +132,7 @@ get_header(); ?>
 <div class="block cases">
 	<div class="cases__row cases__row--home">
 		<h2 class="block-hed">Our Work<?php // echo esc_html($about_hed); ?></h2>
-		<div class="container">
+		<div class="container scroll">
 
 			<!--<div class="cases-intro">
 				<h2>Digital</h2>
@@ -172,7 +172,7 @@ get_header(); ?>
 	?>
 
 	<div class="jumbotron jumbotron__home-brand jumbotron__home-brand--custom section" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'carousel'); ?>)">
-		<div class="carousel-caption custom scroll animate-scroll-pop">
+		<div class="carousel-caption custom scroll">
 			<h2 class="logo"><?php echo get_the_title($post->ID); ?></h2>
 			<h3 class><?php the_excerpt($post->ID); ?></h3>
 
