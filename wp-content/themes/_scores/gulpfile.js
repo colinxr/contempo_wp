@@ -13,8 +13,6 @@ var sass 				 = require('gulp-sass'),
 		rename 			 = require('gulp-rename');
 
 // ... variables
-var input = './assets/styles/src/**/*.scss';
-var output = './assets/styles/build';
 var autoprefixerOptions = {
 		  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 		};
@@ -28,7 +26,7 @@ gulp.task('sprites', function(){
 
 // Styles task
 gulp.task('styles', function(){
-	return gulp.src(input)
+	return gulp.src('./assets/styles/src/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({errLogToConsole: true}))
 		.pipe(cleanCSS())
@@ -39,7 +37,7 @@ gulp.task('styles', function(){
     //.pipe(autoprefixer({browsers: ['last 1 version', 'iOS 6'], cascade: false}))
     .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '../styles/src'}))
 
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest('./assets/styles/build'))
 });
 
 gulp.task('vendor', function(){
