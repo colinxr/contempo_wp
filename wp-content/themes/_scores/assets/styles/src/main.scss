@@ -3,7 +3,10 @@
 
 @import "partials/variables", "mixins/mixins", "partials/typography", "partials/card", "partials/buttons", "partials/slick", "partials/nav", "partials/home", "partials/jumbotron", "partials/client-carousel",   "partials/case-studies", "partials/page-head", "partials/grid-elements", "partials/brand-info", "partials/brand-carousel",  "partials/contact", "partials/posts", "partials/footer", "partials/modernizr";
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+}
 
 html {
   text-rendering:optimizeLegibility;

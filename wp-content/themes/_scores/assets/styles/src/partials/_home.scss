@@ -71,11 +71,20 @@
 .about {
   background-color: $bg-color;
   text-align: center;
+  -webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+  -webkit-transform-style: preserve-3d;
 }
 
  .about__hed,
 .about__copy,
    .services { opacity: 0; }
+
+.about__hed {
+  -webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+  -webkit-transform-style: preserve-3d;
+}
 
 // Flexbox Safari Fallback Support
 @supports not (display: grid) {
