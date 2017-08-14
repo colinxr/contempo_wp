@@ -26,13 +26,13 @@
 }
 
 .imgSmall {
-  filter: blur(50px);
+  filter: blur(40px);
   left: 0;
   opacity: 1;
   position: absolute;
-  top: 0;
+  top: -160px;
   /* this is needed so Safari keeps sharp edges */
-  transform: scale(1);
+  transform: scale(1.2);
   transition: opacity .5s ease-in-out;
   width: 100%;
 }
