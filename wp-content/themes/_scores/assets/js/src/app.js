@@ -2,6 +2,24 @@
 
 $(document).ready(function(){
 
+	var jumbotron = $('.jumbotron__home');
+	var imgSmall 	= $('.imgSmall');
+
+	var img = new Image();
+	img.src = imgSmall.attr('src');
+	img.onload = function() {
+		imgSmall.addClass('loaded');
+	};
+
+	var imgLarge = new Image();
+	imgLarge.src = jumbotron.data('img');
+	imgLarge.onload = function(){
+		jumbotron.addClass('loaded');
+		var bgCss = 'url(' + imgLarge.src  + ') no-repeat center';
+		jumbotron.css('background', bgCss);
+		imgSmall.css('opacity', 0);
+	};
+
 	// Dropdown Nav Menu
 	$('ul.nav li.dropdown').hover(function() {
   	$(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(500);

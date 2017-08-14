@@ -20,7 +20,8 @@ get_header(); ?>
 	$img = contempo_get_option( 'home_jumbotron_img' );
 ?>
 
-<div class="jumbotron jumbotron__home" style="background: url('<?php echo esc_html($img); ?>') no-repeat center;">
+<div class="jumbotron jumbotron__home" data-img="<?php echo esc_html($img); ?>">
+	<img src="http://localhost:8888/contempo/wp-content/uploads/2017/08/contempo-jumbotron_progressive-1.jpg" class="imgSmall">
 
 	<div class="container">
 		<div class="jumbotron__hed">

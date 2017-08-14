@@ -4,9 +4,9 @@
 
 .jumbotron__home {
   background-color: $base-color !important;
-  background: url('../../imgs/contempo-jumbotron.jpg') no-repeat center;
   background-size: cover;
   height: 90vh;
+  overflow: hidden;
   position: relative;
   text-align: center;
   &:before {
@@ -23,6 +23,18 @@
 
   .cta {
     animation-delay: .3s; }
+}
+
+.imgSmall {
+  filter: blur(50px);
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  /* this is needed so Safari keeps sharp edges */
+  transform: scale(1);
+  transition: opacity .5s ease-in-out;
+  width: 100%;
 }
 
 .jumbotron__hed {

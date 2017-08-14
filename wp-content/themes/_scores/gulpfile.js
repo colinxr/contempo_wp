@@ -63,9 +63,13 @@ gulp.task('scripts', function(){
 })
 
 gulp.task('watch', function(){
-	return gulp.watch(input, ['sprites','styles', 'vendor', 'scripts'])
+	gulp.watch(['./assets/js/src/vendor/**/*.js', './assets/js/src/*.js'], ['vendor', 'scripts'])
+	.on('change', function(event){
+		console.log('JS file ' + event.path + ' was ' + event.type + ', running tasks... 🚴')
+	});
+	gulp.watch(['assets/imgs/svg/**/*.svg', './assets/styles/src/**/*.scss'], ['sprites','styles'])
 		.on('change', function(event){
-			console.log('File ' + event.path + ' was ' + event.type + ', running tasks... 🚴')
+			console.log('SCSS file ' + event.path + ' was ' + event.type + ', running tasks... 🚴')
 		});
 
 });
