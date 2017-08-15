@@ -156,10 +156,32 @@ function contempo_scripts() {
 add_action( 'wp_enqueue_scripts', 'contempo_scripts' );
 
 function dns_prefetch() {
+
+	if ( is_front_page() ) {
+		echo '<link rel="preload" href="' . get_template_directory_uri() . '/assets/imgs/contempo-jumbotron_progressive-1.jpg" as="image" type="image/jpeg" />';
+	};
+
 	echo '<meta http-equiv="x-dns-prefetch-control" content="on">
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 	<link rel="dns-prefetch" href="//google-analytics.com">
-	<link rel="dns-prefetch" href="//www.google-analytics.com">';
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+
+	<link rel="preload" as="font" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.woff" type="font/woff" crossorigin />
+
+	<style>
+		@font-face {
+			font-family: "Calibre Regular";
+
+			src: url("<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.eot");
+			src: url("<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.woff") format("woff"),
+					 url("<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.svg#Calibre-Regular") format("svg");
+
+			font-weight: normal;
+			font-style: normal;
+			font-variant: normal;
+			font-display: swap;
+		}
+	</style>';
 
 }
 add_action( 'wp_head', 'dns_prefetch', 0);
@@ -278,7 +300,10 @@ function contempo_contact_metaboxes() {
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'General Info', 'cmb2' ),
 		'object_types'  => array( 'page' ),
-		'show_on'      => array( 'key' => 'id', 'value' => array( 24 ), 'key' => 'id', 'value' => array( 107 ) ),
+		'show_on'      => array(
+			'key' => 'id', 'value' => array( 107 ),
+			'key' => 'id', 'value' => array( 24 )
+			),
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true,
