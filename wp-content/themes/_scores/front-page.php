@@ -21,7 +21,7 @@ get_header(); ?>
 ?>
 
 <div class="jumbotron jumbotron__home" data-img="<?php echo esc_html($img); ?>">
-	<img src="http://localhost:8888/contempo/wp-content/uploads/2017/08/contempo-jumbotron_progressive-1.jpg" class="imgSmall">
+	<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/contempo-jumbotron_progressive-1.jpg" class="imgSmall">
 
 	<div class="container">
 		<div class="jumbotron__hed">
