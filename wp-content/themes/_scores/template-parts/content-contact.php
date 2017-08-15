@@ -23,15 +23,15 @@
 	$cd_email				 = get_post_meta( get_the_ID(), '_contact_cd_email', true );
 
 	$sharp_eic_name  = get_post_meta( get_the_ID(), '_contact_sharp_eic_name', true );
-	$sharp_eic_img   = get_post_meta( get_the_ID(), '_contact_sharp_eic_img', true );
+	$sharp_eic_img   = wp_get_attachment_image_url( get_post_meta( get_the_ID(), '_contact_sharp_eic_img', true ) );
 	$sharp_eic_email = get_post_meta( get_the_ID(), '_contact_sharp_eic_email', true );
 
 	$smag_eic_name   = get_post_meta( get_the_ID(), '_contact_smag_eic_name', true );
-	$smag_eic_img    = get_post_meta( get_the_ID(), '_contact_smag_eic_img', true );
+	$smag_eic_img    = wp_get_attachment_image_url( get_post_meta( get_the_ID(), '_contact_smag_eic_img', true ) );
 	$smag_eic_email  = get_post_meta( get_the_ID(), '_contact_smag_eic_email', true );
 
 	$art_name  			 = get_post_meta( get_the_ID(), '_contact_art_name', true );
-	$art_img   			 = get_post_meta( get_the_ID(), '_contact_art_img', true );
+	$art_img   			 = wp_get_attachment_image_url( get_post_meta( get_the_ID(), '_contact_art_img', true ) );
 	$art_email 			 = get_post_meta( get_the_ID(), '_contact_art_email', true );
 
 	$company_info 	 = get_post_meta( get_the_ID(), '_contact_address_info', true );
@@ -55,7 +55,7 @@
 
       <div class="card-inline card-contact">
         <div class="card__header">
-          <img src="imgs/placeholder.jpg" class="card-contact__img">
+          <img src="<?php echo esc_html( $sharp_eic_img ); ?>" class="card-contact__img">
         </div>
 
         <div class="card-inline__info">
@@ -67,7 +67,7 @@
 
       <div class="card-inline card-contact">
         <div class="card__header">
-          <img src="imgs/placeholder.jpg" class="card-contact__img">
+          <img src="<?php echo esc_html( $s_eic_img ); ?>" class="card-contact__img">
         </div>
 
         <div class="card-inline__info">
@@ -79,7 +79,7 @@
 
       <div class="card-inline card-contact">
         <div class="card__header">
-          <img src="imgs/placeholder.jpg" class="card-contact__img">
+          <img src="<?php echo esc_html( $art_img ); ?>" class="card-contact__img">
         </div>
 
         <div class="card-inline__info">
