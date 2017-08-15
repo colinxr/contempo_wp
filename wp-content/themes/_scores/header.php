@@ -60,7 +60,7 @@
 
 		<div class="container-fluid">
 
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><svg class="icon contempo-media navbar-brand__logo"><use xlink:href="#contempo-media"></use></svg></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><span><svg class="icon contempo-media navbar-brand__logo"><use xlink:href="#contempo-media"></use></svg></span></a>
 
 			<?php
 				wp_nav_menu( array(

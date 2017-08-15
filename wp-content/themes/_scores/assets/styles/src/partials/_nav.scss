@@ -18,6 +18,15 @@ body { padding-top: 81px; }
 
 .navbar-default { background-color: white; }
 
+a {
+	&.navbar-brand {
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+
 .navbar-brand {
 	width: 150px; //firefox fix
 }
@@ -25,6 +34,8 @@ body { padding-top: 81px; }
 .navbar-brand__logo {
 	height: 50px;
 	margin-left: -25px;
+	position: relative;
+	z-index: -1;
 }
 
 .navbar-nav li a {
