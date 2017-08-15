@@ -17,6 +17,20 @@
 	<?php if ( is_front_page() ) { ?>
 		<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/imgs/contempo-jumbotron_progressive-1.jpg" as="image" type="image/jpeg" />
 	<?php } ;?>
+	<style>
+		@font-face {
+			font-family: 'Calibre Regular';
+
+			src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.eot');
+			src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.woff') format('woff'),
+					 url('<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.svg#Calibre-Regular') format('svg');
+
+			font-weight: normal;
+			font-style: normal;
+			font-variant: normal;
+			font-display: swap;
+		}
+	</style>
 	<?php wp_head(); ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
