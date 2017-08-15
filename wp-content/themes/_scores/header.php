@@ -13,6 +13,10 @@
 ?>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+	<link rel="preload" as="font" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/calibre/Calibre-Regular.woff" type="font/woff" crossorigin />
+	<?php if ( is_front_page() ) { ?>
+		<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/imgs/contempo-jumbotron_progressive-1.jpg" as="image" type="image/jpeg" />
+	<?php } ;?>
 	<?php wp_head(); ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
