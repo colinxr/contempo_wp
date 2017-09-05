@@ -58,31 +58,6 @@
    }
  }
 
-// CSS Grid -> Main Grid Framework I'm using
-.grid__brand-info {
-	grid-template-columns: 30%;
-	grid-template-rows: 145px 145px 1fr;
-}
- .box {
-   h2 {
-     font-family: $font-stack;
-     font-weight: 500;
-		 margin-top: 0;
-   }
- }
-
- .row-one {
-	 grid-row: 1;
- }
-
- .row-two {
-	 grid-row: 2;
- }
-
-.row-three {
-	grid-row: 3;
-}
-
 .grid__page-cases {
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
@@ -120,6 +95,31 @@
   @include mobile {
     display: block;
   }
+}
+
+// CSS Grid -> Main Grid Framework I'm using
+.grid__brand-info {
+	grid-template-columns: 31% 31% 31%;
+	grid-template-rows: 145px 145px 1fr;
+}
+ .box {
+   h2 {
+     font-family: $font-stack;
+     font-weight: 500;
+		 margin-top: 0;
+   }
+ }
+
+ .row-one {
+	 grid-row: 1;
+ }
+
+ .row-two {
+	 grid-row: 2;
+ }
+
+.row-three {
+	grid-row: 3;
 }
 
 h3 {

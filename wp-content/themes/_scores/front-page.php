@@ -110,16 +110,6 @@ get_header(); ?>
 				<svg class="icon clipboard"><use xlink:href="#clipboard"></use></svg>
 				<h4>Production</h4>
 			</div>
-
-			<div class="service" id="events">
-				<svg class="icon calendar"><use xlink:href="#calendar"></use></svg>
-				<h4>Events</h4>
-			</div>
-
-			<div class="service" id="consumer">
-				<svg class="icon user-check"><use xlink:href="#user-check"></use></svg>
-				<h4>Consumer</h4>
-			</div>
 		</div>
 
 		<a class="btn btn-secondary block-cta" href="#contactForm">How Can We Help?</a>
@@ -160,7 +150,7 @@ get_header(); ?>
 		</div> <!-- end of .container -->
 
 		<div class="container__btn">
-			<a class="btn btn-secondary block-cta" href="contempo/case-studies">See More Work</a>
+			<a class="btn btn-secondary block-cta" href="contempo/case-studies">See More</a>
 		</div>
 
 	</div> <!-- end of .cases-row__digital -->

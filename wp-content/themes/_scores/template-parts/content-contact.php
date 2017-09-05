@@ -46,6 +46,7 @@
 
 		<h1 class="animate-pop-in"><?php echo esc_html( $hed ); ?></h1>
 		<h3 class="animate-pop-in"><?php echo esc_html( $dek ); ?></h3>
+		<?php echo esc_html( $sharp_eic_img ); ?>
 
 	</div>
 </div>
@@ -55,7 +56,7 @@
 
       <div class="card-inline card-contact">
         <div class="card__header">
-          <img src="<?php echo esc_html( $sharp_eic_img ); ?>" class="card-contact__img">
+          <img src="<?php echo $sharp_eic_img; ?>" class="card-contact__img">
         </div>
 
         <div class="card-inline__info">
@@ -67,7 +68,7 @@
 
       <div class="card-inline card-contact">
         <div class="card__header">
-          <img src="<?php echo esc_html( $s_eic_img ); ?>" class="card-contact__img">
+          <img src="<?php echo $s_eic_img; ?>" class="card-contact__img">
         </div>
 
         <div class="card-inline__info">
@@ -79,7 +80,7 @@
 
       <div class="card-inline card-contact">
         <div class="card__header">
-          <img src="<?php echo esc_html( $art_img ); ?>" class="card-contact__img">
+          <img src="<?php echo $art_img; ?>" class="card-contact__img">
         </div>
 
         <div class="card-inline__info">

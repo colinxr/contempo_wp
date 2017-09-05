@@ -50,6 +50,7 @@
 					'theme_location' => 'header-menu',
 					'container' => 'div',
 					'container_class' => 'collapse navbar-collapse',
+					'container_id' => 'navigationbar',
 					'menu_class' => 'nav navbar-nav navbar-right',
 					'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
 					'walker' => new wp_bootstrap_navwalker()
@@ -57,7 +58,7 @@
 				);
 			?>
 
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

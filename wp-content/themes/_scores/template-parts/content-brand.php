@@ -163,6 +163,7 @@
 
 <div class="block cases cases--page">
 	<div class="cases__row cases__row--page">
+		<h2 class="block-hed">Our Work<?php // echo esc_html($about_hed); ?></h2>
 		<div class="container scroll">
 			<?php
 

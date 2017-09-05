@@ -9,10 +9,6 @@
 	overflow: hidden;
 	width: 100%;
 
-	@include sm-desktop {
-		height: 486px;
-	 }
-
 	&:before {
 		background: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.8));
 		content: "";
@@ -22,6 +18,10 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	@include sm-desktop {
+		height: 486px;
+	 }
 
 	.attachment-carousel {
 		width: 100%;
